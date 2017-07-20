@@ -18,14 +18,19 @@
  */
 $a_text=$_POST['a_text'];
 
-function top_three_words($a_text) {
-
-    $a_text = explode(" ", $a_text);
-    foreach ($a_text as $item) {
-        $a[]=strlen($item);
-        $a++;
+function top_three_words($a_text)
+{
+    $a_text = explode(' ', $a_text);
+    // print_r($a);
+    for ($i = 0; $i < count($a_text); $i++) {
+        for ($j = 0; $j < count($a_text)-3; $j++) {
+            if (mb_strlen($a_text[$j])>mb_strlen($a_text[$j+1])){
+                $c=$a_text[$j];
+                $a_text[$j]=$a_text[$j+1];
+                $a_text[$j+1]=$c;
+            }
+        }
     }
-    print_r($a);
-
+    return (array_slice($a_text, 0, 3));
 }
-top_three_words($a_text);
+print_r(top_three_words($a_text));
