@@ -5,11 +5,13 @@
     <title>Title</title>
 </head>
 <body>
-    <form action="task7.html" method="post" style="height: 130px; width: 500px; background-color: #ffd862;">
+
+    <form action="" method="post" style="height: 130px; width: 500px; background-color: #ffd862;">
+        <input name="nom" type="hidden" value="<?php echo ($handle); ?>">
         <label for="user">Ваш ник:</label>
         <input type="text" name="user" id="user" placeholder="user" style="width: 60px;">
         <label for="comment">Ваш комментарий:</label>
-        <input type="text" name="comment" id="comment" placeholder="comment" style="width: 200px; height: 80px;">
+        <textarea name="comment" id="comment" style="width: 400px; height: 80px;"></textarea>
         <button type="submit" name="submit" >Submit</button>
     </form>
 </body>
